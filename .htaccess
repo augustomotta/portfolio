@@ -1,0 +1,9 @@
+# Proteger arquivo de configuração
+<Files "config.js">
+    Require all denied
+</Files>
+
+# Alternativa: bloquear acesso a todos os arquivos de configuração
+<FilesMatch "^config\..*\.js$">
+    Require all denied
+</FilesMatch>
