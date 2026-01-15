@@ -62,6 +62,8 @@ const translations = {
         'skills.docker.desc': 'Containerização de aplicações',
         'skills.git.desc': 'Controle de versão e colaboração',
         'skills.apache.desc': 'Servidor Web Apache',
+        'skills.bancodedados': 'Bancos de Dados (SQL / MySQL)',
+        'skills.ciberseguranca': 'Cibersegurança',
 
         // Achievements Section
         'achievements.title': 'Conquistas & Reconhecimentos',
@@ -153,6 +155,8 @@ const translations = {
         'skills.docker.desc': 'Application containerization',
         'skills.git.desc': 'Version control and collaboration',
         'skills.apache.desc': 'Apache Web Server',
+        'skills.bancodedados': 'Databases (SQL / MySQL)',
+        'skills.ciberseguranca': 'Cybersecurity',
 
         // Achievements Section
         'achievements.title': 'Achievements & Recognitions',
