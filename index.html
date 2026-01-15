@@ -14,8 +14,9 @@
     <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
     <link rel="stylesheet" href="styles.css">
 
-    <!-- Configurações do site -->
+    <!-- Configurações e Traduções do site -->
     <script src="config.js"></script>
+    <script src="translations.js"></script>
 
     <!-- Google tag (gtag.js) -->
     <script>
@@ -36,6 +37,24 @@
 </head>
 
 <body>
+    <!-- Seletor de Idioma -->
+    <div class="language-selector" id="langSelector">
+        <button class="language-btn" id="langToggle" type="button" aria-label="Seletor de idioma">
+            <i class="bi bi-translate"></i>
+            <span id="currentLangText">English</span>
+            <i class="bi bi-chevron-down"></i>
+        </button>
+        <div class="language-dropdown" id="langDropdown">
+            <button class="lang-option" data-lang="en" type="button">
+                <span class="flag">🇺🇸</span>
+                <span>English</span>
+            </button>
+            <button class="lang-option" data-lang="pt" type="button">
+                <span class="flag">🇧🇷</span>
+                <span>Português</span>
+            </button>
+        </div>
+    </div>
 
     <!-- Hero Section -->
     <section class="hero">
@@ -47,7 +66,8 @@
                             class="profile-image">
                     </div>
                     <h1 class="hero-title">Carlos Augusto Rolim da Motta</h1>
-                    <p class="hero-subtitle">Desenvolvedor Full Stack & Especialista em Segurança</p>
+                    <p class="hero-subtitle" data-i18n="hero.subtitle">Desenvolvedor Full Stack & Especialista em
+                        Segurança</p>
 
                 </div>
 
@@ -85,19 +105,19 @@
                 </div>
 
                 <a href="#sobre" class="cta-button">
-                    <span>Sobre</span>
+                    <span data-i18n="nav.about">Sobre</span>
                 </a>
                 <a href="#projetos" class="cta-button">
-                    <span>Projetos</span>
+                    <span data-i18n="nav.projects">Projetos</span>
                 </a>
                 <a href="#experiencia" class="cta-button">
-                    <span>Experiência</span>
+                    <span data-i18n="nav.experience">Experiência</span>
                 </a>
                 <a href="#habilidades" class="cta-button">
-                    <span>Habilidades</span>
+                    <span data-i18n="nav.skills">Habilidades</span>
                 </a>
                 <a href="#conquistas" class="cta-button">
-                    <span>Conquistas</span>
+                    <span data-i18n="nav.achievements">Conquistas</span>
                 </a>
             </div>
         </div>
@@ -106,9 +126,9 @@
     <!-- Sobre Section -->
     <section id="sobre">
         <div class="container">
-            <h2 class="section-title">Sobre Mim</h2>
+            <h2 class="section-title" data-i18n="about.title">Sobre Mim</h2>
             <div class="steel-card">
-                <p
+                <p data-i18n="about.text" data-i18n-html
                     style="color: var(--text-secondary); font-size: 1.125rem; line-height: 1.8; text-align: center; max-width: 900px; margin: 0 auto;">
                     Servidor público estadual na <strong>SECTET-PA</strong> desde 2010, com sólida experiência em
                     desenvolvimento de sistemas web,
@@ -127,9 +147,9 @@
     <!-- Projetos Section -->
     <section id="projetos">
         <div class="container">
-            <h2 class="section-title">Projetos em Destaque</h2>
+            <h2 class="section-title" data-i18n="projects.title">Projetos em Destaque</h2>
             <div class="carousel-container">
-                <button class="carousel-btn carousel-btn-prev" aria-label="Anterior">
+                <button class="carousel-btn carousel-btn-prev" data-i18n-aria="btn.previous" aria-label="Anterior">
                     <i class="bi bi-chevron-left"></i>
                 </button>
                 <div class="carousel-wrapper">
@@ -172,8 +192,8 @@
                                     </g>
                                 </svg>
                             </div>
-                            <h3 class="project-title">GCONWEB</h3>
-                            <p class="project-description">
+                            <h3 class="project-title" data-i18n="projects.gconweb.title">GCONWEB</h3>
+                            <p class="project-description" data-i18n="projects.gconweb.desc" data-i18n-html>
                                 Sistema completo de Gerenciamento de Contratos desenvolvido para a Secretaria de
                                 Ciência,
                                 Tecnologia e Educação Profissional e Tecnológica do Estado do Pará (SECTET).
@@ -192,8 +212,8 @@
                             <div class="project-icon" style="overflow: hidden">
                                 <i class='bx bx-edit' style="font-size: 1.6em"></i>
                             </div>
-                            <h3 class="project-title">POINT</h3>
-                            <p class="project-description">
+                            <h3 class="project-title" data-i18n="projects.point.title">POINT</h3>
+                            <p class="project-description" data-i18n="projects.point.desc">
                                 Sistema de Gerenciamento de Folha de Frequência e Relatório de Atividades de bolsistas.
                                 Implementa funcionalidades de registro de frequência e relatório de atividades mensal,
                                 além de
@@ -210,8 +230,8 @@
                         <div class="project-card">
                             <div class="project-icon"><i class="bi bi-file-earmark-medical"
                                     style="font-size: 1.5em;"></i></div>
-                            <h3 class="project-title">Consultório Odontológico</h3>
-                            <p class="project-description">
+                            <h3 class="project-title" data-i18n="projects.dental.title">Consultório Odontológico</h3>
+                            <p class="project-description" data-i18n="projects.dental.desc">
                                 Sistema de Gestão para Consultório Odontológico desenvolvido para otimizar o agendamento
                                 de
                                 consultas. Além disso, gerencia prontuários, tratamentos e faturamento, proporcionando
@@ -229,8 +249,8 @@
 
                         <div class="project-card">
                             <div class="project-icon"><i class="bi bi-journal-text" style="font-size: 1.5em;"></i></div>
-                            <h3 class="project-title">BTex Manager</h3>
-                            <p class="project-description">
+                            <h3 class="project-title" data-i18n="projects.btex.title">BTex Manager</h3>
+                            <p class="project-description" data-i18n="projects.btex.desc">
                                 Sistema de gerenciamento de referências bibliográficas no formato BibTeX. Desenvolvida
                                 com foco em segurança, usabilidade e
                                 performance, a ferramenta permite importar, organizar, pesquisar e exportar referências
@@ -248,8 +268,8 @@
                         <div class="project-card">
                             <div class="project-icon"><i class="bi bi-graph-up-arrow" style="font-size: 1.5em;"></i>
                             </div>
-                            <h3 class="project-title">WebMonitor</h3>
-                            <p class="project-description">
+                            <h3 class="project-title" data-i18n="projects.webmonitor.title">WebMonitor</h3>
+                            <p class="project-description" data-i18n="projects.webmonitor.desc">
                                 O WebMonitor é uma solução completa e robusta para monitoramento contínuo de
                                 disponibilidade, performance e saúde de
                                 múltiplos sites simultaneamente. O sistema utiliza algoritmos avançados de tomada de
@@ -272,7 +292,7 @@
 
                     </div>
                 </div>
-                <button class="carousel-btn carousel-btn-next" aria-label="Próximo">
+                <button class="carousel-btn carousel-btn-next" data-i18n-aria="btn.next" aria-label="Próximo">
                     <i class="bi bi-chevron-right"></i>
                 </button>
             </div>
@@ -282,13 +302,14 @@
     <!-- Experiência Section -->
     <section id="experiencia" style="background: rgba(0, 0, 0, 0.05);">
         <div class="container">
-            <h2 class="section-title">Trajetória Profissional</h2>
+            <h2 class="section-title" data-i18n="experience.title">Trajetória Profissional</h2>
             <div class="timeline">
                 <div class="timeline-item">
                     <div class="timeline-content">
-                        <span class="timeline-date">2010 - Presente</span>
-                        <h3 class="timeline-title">Analista de Sistemas - SECTET/PA</h3>
-                        <p class="timeline-description">
+                        <span class="timeline-date" data-i18n="experience.sectet.date">2010 - Presente</span>
+                        <h3 class="timeline-title" data-i18n="experience.sectet.title">Analista de Sistemas - SECTET/PA
+                        </h3>
+                        <p class="timeline-description" data-i18n="experience.sectet.desc">
                             Desenvolvimento e manutenção de sistemas web críticos para a gestão pública. Criação do
                             GCONWEB
                             e POINT, além de gestão de infraestrutura de TI e segurança da informação.
@@ -298,9 +319,10 @@
 
                 <div class="timeline-item">
                     <div class="timeline-content">
-                        <span class="timeline-date">2023 - 2024</span>
-                        <h3 class="timeline-title">Programa Hackers do Bem - RNP</h3>
-                        <p class="timeline-description">
+                        <span class="timeline-date" data-i18n="experience.hackers.date">2023 - 2024</span>
+                        <h3 class="timeline-title" data-i18n="experience.hackers.title">Programa Hackers do Bem - RNP
+                        </h3>
+                        <p class="timeline-description" data-i18n="experience.hackers.desc">
                             Formação intensiva em Cibersegurança com certificações em Blue Team e operações de
                             segurança.
                             Capacitação avançada em resposta a incidentes e defesa cibernética.
@@ -310,9 +332,10 @@
 
                 <div class="timeline-item">
                     <div class="timeline-content">
-                        <span class="timeline-date">2024 - 2025</span>
-                        <h3 class="timeline-title">Mestrando em Ciência da Computação - UFPA</h3>
-                        <p class="timeline-description">
+                        <span class="timeline-date" data-i18n="experience.masters.date">2024 - 2025</span>
+                        <h3 class="timeline-title" data-i18n="experience.masters.title">Mestrando em Ciência da
+                            Computação - UFPA</h3>
+                        <p class="timeline-description" data-i18n="experience.masters.desc">
                             Pesquisa em tecnologia assistiva para pessoas com Transtorno do Espectro Autista (TEA),
                             aplicando conhecimentos em desenvolvimento de software e inteligência artificial.
                         </p>
@@ -326,13 +349,13 @@
     <!-- Skills Section -->
     <section id="habilidades">
         <div class="container">
-            <h2 class="section-title">Habilidades Técnicas</h2>
+            <h2 class="section-title" data-i18n="skills.title">Habilidades Técnicas</h2>
             <div class="skills-grid">
 
                 <!-- Desenvolvimento -->
                 <div class="skill-category">
                     <div class="skill-category-header">
-                        <h3><i class="bi bi-code"></i> Desenvolvimento</h3>
+                        <h3><i class="bi bi-code"></i> <span data-i18n="skills.development">Desenvolvimento</span></h3>
                     </div>
 
                     <div class="skill-category-body">
@@ -345,7 +368,8 @@
                                     <span class="level-dot active"></span><span class="level-dot active"></span>
                                     <span class="level-dot"></span>
                                 </div>
-                                <div class="skill-description">Sistemas web, APIs e automação</div>
+                                <div class="skill-description" data-i18n="skills.php.desc">Sistemas web, APIs e
+                                    automação</div>
                             </div>
                         </div>
 
@@ -359,7 +383,8 @@
                                     <span class="level-dot active"></span><span class="level-dot active"></span>
                                     <span class="level-dot"></span>
                                 </div>
-                                <div class="skill-description">Aplicações interativas e consumo de APIs</div>
+                                <div class="skill-description" data-i18n="skills.js.desc">Aplicações interativas e
+                                    consumo de APIs</div>
                             </div>
                         </div>
 
@@ -372,7 +397,8 @@
                                     <span class="level-dot active"></span><span class="level-dot active"></span>
                                     <span class="level-dot"></span>
                                 </div>
-                                <div class="skill-description">Modelagem, queries e otimização</div>
+                                <div class="skill-description" data-i18n="skills.sql.desc">Modelagem, queries e
+                                    otimização</div>
                             </div>
                         </div>
 
@@ -385,7 +411,8 @@
                                     <span class="level-dot active"></span><span class="level-dot active"></span>
                                     <span class="level-dot"></span>
                                 </div>
-                                <div class="skill-description">Automação, integrações e análise de dados</div>
+                                <div class="skill-description" data-i18n="skills.python.desc">Automação, integrações e
+                                    análise de dados</div>
                             </div>
                         </div>
 
@@ -400,7 +427,8 @@
                                     <span class="level-dot active"></span><span class="level-dot active"></span>
                                     <span class="level-dot"></span>
                                 </div>
-                                <div class="skill-description">Design responsivo e interfaces</div>
+                                <div class="skill-description" data-i18n="skills.bootstrap.desc">Design responsivo e
+                                    interfaces</div>
                             </div>
                         </div>
                     </div>
@@ -410,7 +438,8 @@
                 <!-- Segurança & Infraestrutura -->
                 <div class="skill-category">
                     <div class="skill-category-header">
-                        <h3><i class="bi bi-shield-lock"></i> Segurança & Infra</h3>
+                        <h3><i class="bi bi-shield-lock"></i> <span data-i18n="skills.security">Segurança & Infra</span>
+                        </h3>
                     </div>
 
                     <div class="skill-category-body">
@@ -424,7 +453,8 @@
                                     <span class="level-dot active"></span><span class="level-dot active"></span>
                                     <span class="level-dot"></span>
                                 </div>
-                                <div class="skill-description">Certificado Hackers do Bem (RNP)</div>
+                                <div class="skill-description" data-i18n="skills.cyber.desc">Certificado Hackers do Bem
+                                    (RNP)</div>
                             </div>
                         </div>
 
@@ -439,8 +469,8 @@
                                     <span class="level-dot active"></span><span class="level-dot"></span>
                                     <span class="level-dot"></span>
                                 </div>
-                                <div class="skill-description">Redução da superfície de ataque e configurações seguras
-                                </div>
+                                <div class="skill-description" data-i18n="skills.hardening.desc">Redução da superfície
+                                    de ataque e configurações seguras</div>
                             </div>
                         </div>
 
@@ -453,7 +483,8 @@
                                     <span class="level-dot active"></span><span class="level-dot active"></span>
                                     <span class="level-dot"></span>
                                 </div>
-                                <div class="skill-description">Configuração e gestão de firewall</div>
+                                <div class="skill-description" data-i18n="skills.fortigate.desc">Configuração e gestão
+                                    de firewall</div>
                             </div>
                         </div>
 
@@ -466,7 +497,8 @@
                                     <span class="level-dot active"></span><span class="level-dot active"></span>
                                     <span class="level-dot"></span>
                                 </div>
-                                <div class="skill-description">Certificação Microsoft AZ-800</div>
+                                <div class="skill-description" data-i18n="skills.windows.desc">Certificação Microsoft
+                                    AZ-800</div>
                             </div>
                         </div>
 
@@ -479,7 +511,8 @@
                                     <span class="level-dot active"></span><span class="level-dot active"></span>
                                     <span class="level-dot"></span>
                                 </div>
-                                <div class="skill-description">Administração e deploy de servidores</div>
+                                <div class="skill-description" data-i18n="skills.linux.desc">Administração e deploy de
+                                    servidores</div>
                             </div>
                         </div>
                     </div>
@@ -489,7 +522,7 @@
                 <!-- DevOps & Ferramentas -->
                 <div class="skill-category">
                     <div class="skill-category-header">
-                        <h3><i class="bi bi-tools"></i> DevOps & Ferramentas</h3>
+                        <h3><i class="bi bi-tools"></i> <span data-i18n="skills.devops">DevOps & Ferramentas</span></h3>
                     </div>
 
                     <div class="skill-category-body">
@@ -503,7 +536,8 @@
                                     <span class="level-dot active"></span><span class="level-dot active"></span>
                                     <span class="level-dot"></span>
                                 </div>
-                                <div class="skill-description">Containerização de aplicações</div>
+                                <div class="skill-description" data-i18n="skills.docker.desc">Containerização de
+                                    aplicações</div>
                             </div>
                         </div>
 
@@ -516,7 +550,8 @@
                                     <span class="level-dot active"></span><span class="level-dot active"></span>
                                     <span class="level-dot active"></span>
                                 </div>
-                                <div class="skill-description">Controle de versão e colaboração</div>
+                                <div class="skill-description" data-i18n="skills.git.desc">Controle de versão e
+                                    colaboração</div>
                             </div>
                         </div>
 
@@ -529,7 +564,7 @@
                                     <span class="level-dot active"></span><span class="level-dot active"></span>
                                     <span class="level-dot active"></span>
                                 </div>
-                                <div class="skill-description">Servidor Web Apache</div>
+                                <div class="skill-description" data-i18n="skills.apache.desc">Servidor Web Apache</div>
                             </div>
                         </div>
                     </div>
@@ -543,42 +578,46 @@
     <!-- Conquistas Section -->
     <section id="conquistas" style="background: rgba(0, 0, 0, 0.05);">
         <div class="container">
-            <h2 class="section-title">Conquistas & Reconhecimentos</h2>
+            <h2 class="section-title" data-i18n="achievements.title">Conquistas & Reconhecimentos</h2>
             <div class="achievements">
                 <div class="achievement-card">
                     <div class="achievement-icon"><i class="bi bi-trophy-fill"></i></div>
-                    <h3 class="achievement-title">Prêmio Inova Servidor 2025</h3>
-                    <p class="achievement-description">Estado do Pará (EGPA)</p>
+                    <h3 class="achievement-title" data-i18n="achievements.inova.title">Prêmio Inova Servidor 2025</h3>
+                    <p class="achievement-description" data-i18n="achievements.inova.desc">Estado do Pará (EGPA)</p>
                 </div>
 
                 <div class="achievement-card">
                     <div class="achievement-icon"><i class="bi bi-star-fill"></i></div>
-                    <h3 class="achievement-title">Servidor Nota 10 2012</h3>
-                    <p class="achievement-description">EGPA - Reconhecimento Estadual</p>
+                    <h3 class="achievement-title" data-i18n="achievements.nota10.title">Servidor Nota 10 2012</h3>
+                    <p class="achievement-description" data-i18n="achievements.nota10.desc">EGPA - Reconhecimento
+                        Estadual</p>
                 </div>
 
                 <div class="achievement-card">
                     <div class="achievement-icon"><i class="bi bi-mortarboard"></i></div>
-                    <h3 class="achievement-title">Mestrado PPGCC/UFPA</h3>
-                    <p class="achievement-description">Ciência da Computação - 2025</p>
+                    <h3 class="achievement-title" data-i18n="achievements.masters.title">Mestrado PPGCC/UFPA</h3>
+                    <p class="achievement-description" data-i18n="achievements.masters.desc">Ciência da Computação -
+                        2025</p>
                 </div>
 
                 <div class="achievement-card">
                     <div class="achievement-icon"><i class="bi bi-shield-lock"></i></div>
-                    <h3 class="achievement-title">Hackers do Bem</h3>
-                    <p class="achievement-description">RNP - Cibersegurança</p>
+                    <h3 class="achievement-title" data-i18n="achievements.hackers.title">Hackers do Bem</h3>
+                    <p class="achievement-description" data-i18n="achievements.hackers.desc">RNP - Cibersegurança</p>
                 </div>
 
                 <div class="achievement-card">
                     <div class="achievement-icon"><i class="bi bi-file-earmark-text"></i></div>
-                    <h3 class="achievement-title">Certificações Cisco</h3>
-                    <p class="achievement-description">CyberOps & Network Security</p>
+                    <h3 class="achievement-title" data-i18n="achievements.cisco.title">Certificações Cisco</h3>
+                    <p class="achievement-description" data-i18n="achievements.cisco.desc">CyberOps & Network Security
+                    </p>
                 </div>
 
                 <div class="achievement-card">
                     <div class="achievement-icon"><i class="bi bi-cloud"></i></div>
-                    <h3 class="achievement-title">Microsoft AZ-800</h3>
-                    <p class="achievement-description">Windows Server Hybrid Admin</p>
+                    <h3 class="achievement-title" data-i18n="achievements.azure.title">Microsoft AZ-800</h3>
+                    <p class="achievement-description" data-i18n="achievements.azure.desc">Windows Server Hybrid Admin
+                    </p>
                 </div>
             </div>
         </div>
@@ -587,8 +626,8 @@
     <!-- Contato/Footer -->
     <footer class="footer" id="contato">
         <div class="container footer-content">
-            <h2>Vamos Conversar?</h2>
-            <p>
+            <h2 data-i18n="footer.title">Vamos Conversar?</h2>
+            <p data-i18n="footer.text">
                 Interessado em colaborar ou discutir projetos? Entre em contato através das redes sociais
                 ou envie uma mensagem direta. Estou sempre aberto a novas oportunidades e desafios.
             </p>
@@ -616,8 +655,9 @@
 
             <div class="footer-info">
                 <p><strong>Carlos Augusto Rolim da Motta</strong></p>
-                <p>Belém, Pará | Brasil</p>
-                <p style="margin-top: 1rem;">&copy; 2026 - Desenvolvido com dedicação e café ☕</p>
+                <p data-i18n="footer.location">Belém, Pará | Brasil</p>
+                <p style="margin-top: 1rem;" data-i18n="footer.copyright">&copy; 2026 - Desenvolvido com dedicação e
+                    café ☕</p>
             </div>
         </div>
     </footer>
