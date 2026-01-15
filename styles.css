@@ -417,13 +417,29 @@ section {
 }
 
 /* Grid de projetos */
-.projects-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-    gap: 2rem;
+/* Container do carrossel */
+.carousel-container {
+    position: relative;
     margin-top: 3rem;
+    padding: 0 60px;
+}
+
+.carousel-wrapper {
+    overflow: hidden;
+    position: relative;
+}
+
+.projects-grid {
+    display: flex;
+    gap: 2rem;
     position: relative;
     z-index: 2;
+    transition: transform 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.carousel-track {
+    display: flex;
+    gap: 2rem;
 }
 
 .project-card {
@@ -441,6 +457,48 @@ section {
     transform: translateY(30px);
     animation: fadeInUp 0.8s ease forwards;
     z-index: 2;
+    flex: 0 0 calc((100% - 4rem) / 3);
+    min-width: calc((100% - 4rem) / 3);
+}
+
+/* Botões de navegação do carrossel */
+.carousel-btn {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 50px;
+    height: 50px;
+    background: rgba(42, 46, 51, 0.9);
+    border: 2px solid rgba(255, 255, 255, 0.1);
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    z-index: 10;
+    transition: all 0.3s ease;
+    color: #ffffff;
+    font-size: 1.5rem;
+    backdrop-filter: blur(10px);
+}
+
+.carousel-btn:hover:not(:disabled) {
+    background: rgba(107, 113, 120, 0.95);
+    border-color: rgba(255, 255, 255, 0.3);
+    transform: translateY(-50%) scale(1.1);
+}
+
+.carousel-btn:disabled {
+    cursor: not-allowed;
+    opacity: 0.3;
+}
+
+.carousel-btn-prev {
+    left: 0;
+}
+
+.carousel-btn-next {
+    right: 0;
 }
 
 .project-card.visible {
@@ -1012,10 +1070,25 @@ section {
         font-size: 1.5rem;
     }
 
-    .projects-grid,
     .skills-grid,
     .achievements {
         grid-template-columns: 1fr;
+    }
+    
+    /* Carrossel responsivo - mobile */
+    .carousel-container {
+        padding: 0 50px;
+    }
+    
+    .project-card {
+        flex: 0 0 100%;
+        min-width: 100%;
+    }
+    
+    .carousel-btn {
+        width: 40px;
+        height: 40px;
+        font-size: 1.2rem;
     }
 
     .timeline {
@@ -1041,5 +1114,13 @@ section {
     .back-to-top svg {
         width: 20px;
         height: 20px;
+    }
+}
+
+/* Tablets - 2 cards */
+@media (min-width: 769px) and (max-width: 1199px) {
+    .project-card {
+        flex: 0 0 calc((100% - 2rem) / 2);
+        min-width: calc((100% - 2rem) / 2);
     }
 }
