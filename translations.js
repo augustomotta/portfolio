@@ -238,7 +238,7 @@ function applyTranslations() {
 function updateLanguageSelector() {
     const langText = document.getElementById('currentLangText');
     if (langText) {
-        langText.textContent = currentLanguage === 'pt' ? 'Português' : 'English';
+        langText.textContent = currentLanguage === 'pt' ? 'PT' : 'EN';
     }
 
     // Atualizar classes ativas nos botões

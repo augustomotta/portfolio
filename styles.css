@@ -1051,6 +1051,11 @@ section {
         border-radius: 15px;
     }
 
+    .hero {
+        min-height: auto;
+        padding: 1.5rem 0 2rem;
+    }
+
     .hero-title {
         min-height: auto;
         white-space: normal;
@@ -1126,57 +1131,72 @@ section {
 }
 
 /* ===== Language Selector ===== */
+/* ===== Language Selector (mesmo estilo do back-to-top) ===== */
 .language-selector {
     position: fixed;
-    top: 20px;
-    right: 20px;
-    z-index: 9999;
+    top: 2rem;
+    right: 2rem;
+    z-index: 1000;
     font-family: inherit;
 }
 
 .language-btn {
+    width: 40px;
+    height: 40px;
+    background: linear-gradient(135deg, var(--primary), var(--primary-hover));
+    border: 2px solid rgba(255, 255, 255, 0.3);
+    border-radius: 10px;
+    color: #ffffff;
+    cursor: pointer;
     display: flex;
     align-items: center;
-    gap: 8px;
-    padding: 10px 16px;
-    background: rgba(255, 255, 255, 0.95);
-    border: 1px solid rgba(107, 113, 120, 0.2);
-    border-radius: 25px;
-    cursor: pointer;
+    justify-content: center;
+    box-shadow:
+        0 6px 20px rgba(107, 113, 120, 0.4),
+        0 3px 10px rgba(0, 0, 0, 0.2),
+        inset 0 1px 0 rgba(255, 255, 255, 0.3);
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
     font-size: 0.9rem;
-    font-weight: 500;
-    color: var(--text-primary);
-    transition: all 0.3s ease;
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-    backdrop-filter: blur(10px);
+    font-weight: 600;
+    opacity: 0.3;
 }
 
 .language-btn:hover {
-    background: #fff;
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15);
-    transform: translateY(-2px);
+    opacity: 1;
+    transform: translateY(-3px);
+    box-shadow:
+        0 10px 30px rgba(107, 113, 120, 0.6),
+        0 5px 12px rgba(0, 0, 0, 0.4),
+        inset 0 1px 0 rgba(255, 255, 255, 0.4);
+    background: linear-gradient(135deg, var(--primary-hover), var(--primary));
+}
+
+.language-btn:active {
+    transform: translateY(-1px);
 }
 
 .language-btn i {
-    font-size: 1rem;
-    transition: transform 0.3s ease;
+    display: none;
 }
 
 .language-dropdown {
     position: absolute;
     top: 100%;
     right: 0;
-    margin-top: 8px;
-    background: #fff;
-    border: 1px solid rgba(107, 113, 120, 0.15);
+    margin-top: 10px;
+    background: linear-gradient(135deg, var(--primary), var(--primary-hover));
+    border: 2px solid rgba(255, 255, 255, 0.3);
     border-radius: 12px;
-    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.15);
+    box-shadow:
+        0 8px 25px rgba(107, 113, 120, 0.5),
+        0 4px 12px rgba(0, 0, 0, 0.3),
+        inset 0 1px 0 rgba(255, 255, 255, 0.3);
     overflow: hidden;
     opacity: 0;
     visibility: hidden;
     transform: translateY(-10px);
-    transition: all 0.3s ease;
-    min-width: 150px;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    min-width: 140px;
 }
 
 .language-dropdown.show {
@@ -1195,37 +1215,39 @@ section {
     background: transparent;
     cursor: pointer;
     font-size: 0.9rem;
-    color: var(--text-primary);
+    color: #ffffff;
     transition: all 0.2s ease;
     text-align: left;
+    font-weight: 500;
 }
 
 .lang-option:hover {
-    background: rgba(107, 113, 120, 0.08);
+    background: rgba(255, 255, 255, 0.15);
 }
 
 .lang-option.active {
-    background: rgba(107, 113, 120, 0.12);
+    background: rgba(255, 255, 255, 0.2);
     font-weight: 600;
 }
 
 .lang-option.active::after {
     content: '✓';
     margin-left: auto;
-    color: #6b7178;
+    color: #ffffff;
     font-weight: bold;
 }
 
 /* Responsive Language Selector */
 @media (max-width: 768px) {
     .language-selector {
-        top: 15px;
-        right: 15px;
+        top: 1rem;
+        right: 1rem;
     }
     
     .language-btn {
-        padding: 8px 12px;
-        font-size: 0.85rem;
+        width: 36px;
+        height: 36px;
+        font-size: 0.8rem;
     }
     
     .lang-option {
